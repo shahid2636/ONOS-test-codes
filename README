@@ -1,0 +1,5 @@
+There are some issues with the meter of P4. You need to check which branch(version) of ONOS do you use, then modify some code. 
+1. ONOS cannot read the meter from the P4 switch until now. (https://jira.onosproject.org/projects/ONOS/issues/ONOS-7720?filter=allopenissues)
+2. Therefore, ONF comments to turn off the meter usage (https://github.com/opennetworkinglab/onos/blob/master/drivers/p4runtime/src/main/resources/p4runtime-drivers.xml)
+So, I think you need to uncomment the code of "behaviour api="org.onosproject.net.meter.MeterProgrammable......" in p4runtime-drivers.xml.
+Then, I think you can configure the meter in the P4 switch. However, you still cannot read the meter from the P4 switch.
